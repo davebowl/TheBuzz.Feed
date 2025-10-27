@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dashboard — TheBuzz.Feed</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="/static/js/chat.js" defer></script>
+  </head>
+  <body class="neon-bg">
+    <div class="app-grid">
+      <aside class="sidebar">
+        <h2>🌿 Channels</h2>
+        <ul id="channelsList">
+          {% for ch in channels %}
+          <li onclick="switchChannel('{{ ch }}')"># {{ ch }}</li>
+          {% endfor %}
+        </ul>
+        <div class="new-ch">
+          <input id="newChannelName" placeholder="new channel">
+          <button onclick="createChannel()">Create</button>
+        </div>
+        <div class="side-footer">
+          <div>Signed in as <strong>{{ username }}</strong></div>
+          <a href="/logout" class="link">Logout</a>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="main-head">
+          <h1>TheBuzz.Feed</h1>
+          <div class="actions">
+            <a class="btn" href="/upload">Upload Video</a>
+          </div>
+        </header>
+
+        <section class="videos">
+          <h3>Videos</h3>
+          <div class="video-grid">
+            {% for v in videos %}
+            <div class="card">
+              <a href="/watch/{{ v.filename }}">{{ v.title }}</a>
+              <div class="meta">by {{ v.uploader }}</div>
+            </div>
+            {% endfor %}
+            {% if videos|length == 0 %}
+            <p class="muted">No videos yet — upload one!</p>
+            {% endif %}
+          </div>
+        </section>
+      </main>
+
+      <section class="chat-panel">
+        <h3 id="channelTitle">#general</h3>
+        <div id="chatbox" class="chatbox"></div>
+        <div class="chat-row">
+          <input id="username" value="{{ username }}" readonly>
+          <input id="message" placeholder="Message...">
+          <button onclick="sendMessage()">Send</button>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

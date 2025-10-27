@@ -1,0 +1,53 @@
+:root{
+  --bg:#060608;
+  --panel:#0d0f12;
+  --muted:#8b8b9a;
+  --accent:#44ff88;
+  --accent2:#9b5cff;
+}
+
+body.neon-bg{
+  background: radial-gradient(ellipse at top left, rgba(155,92,255,0.06), transparent), var(--bg);
+  color:#e9eef6;
+  font-family: Inter, Arial, sans-serif;
+  margin:0;
+}
+
+.center-card{
+  max-width:720px;
+  margin:60px auto;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
+  border:1px solid rgba(155,92,255,0.12);
+  padding:28px;
+  border-radius:12px;
+  text-align:center;
+  box-shadow:0 6px 30px rgba(155,92,255,0.06);
+}
+
+.logo{font-size:28px;color:var(--accent);text-shadow:0 0 10px rgba(68,255,136,0.08)}
+input, button, textarea{padding:10px;border-radius:8px;border:none;background:#0b0d10;color:#e9eef6;width:100%;margin:8px 0;}
+.btn{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#00110a;font-weight:700;cursor:pointer;box-shadow:0 6px 18px rgba(68,255,136,0.06)}
+.link{color:var(--accent);text-decoration:none}
+.err{color:#ff7b7b;background:#2a0b0b;padding:8px;border-radius:6px}
+.hint{margin-top:8px;color:var(--muted)}
+
+.app-grid{display:grid;grid-template-columns:280px 1fr 360px;gap:18px;padding:18px;height:100vh;box-sizing:border-box}
+.sidebar{background:var(--panel);padding:14px;border-radius:10px;border:1px solid rgba(155,92,255,0.06);display:flex;flex-direction:column;gap:12px}
+.sidebar ul{list-style:none;padding:0;margin:0}
+.sidebar li{padding:8px;border-radius:6px;cursor:pointer}
+.sidebar li:hover{background:rgba(155,92,255,0.04)}
+
+.main{background:var(--panel);padding:16px;border-radius:10px;border:1px solid rgba(68,255,136,0.04);overflow:auto}
+.video-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+.card{background:#07070a;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.02)}
+
+.chat-panel{background:var(--panel);padding:12px;border-radius:10px;border:1px solid rgba(155,92,255,0.06);display:flex;flex-direction:column}
+.chatbox{flex:1;background:#030304;border-radius:8px;padding:10px;overflow:auto;border:1px solid #0b0b0b;height:420px}
+.chat-row{display:flex;gap:8px;margin-top:12px}
+.chat-row input{flex:1}
+.muted{color:var(--muted)}
+
+.watch-wrap{display:flex;gap:18px;padding:18px}
+.video-area{flex:1}
+.chat-side{width:360px}
+meta{color:#888}

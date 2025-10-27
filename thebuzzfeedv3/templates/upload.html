@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Upload — TheBuzz.Feed</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="/static/js/upload.js" defer></script>
+  </head>
+  <body class="neon-bg">
+    <div class="center-card">
+      <h2>Upload Video</h2>
+      <form id="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
+        <input name="title" placeholder="Title" required>
+        <input type="file" name="file" accept="video/*" required>
+        <button type="submit" class="btn">Upload</button>
+      </form>
+      <a href="/dashboard" class="link">Back to dashboard</a>
+    </div>
+  </body>
+</html>

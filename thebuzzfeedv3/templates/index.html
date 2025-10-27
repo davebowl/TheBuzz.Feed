@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TheBuzz.Feed — Login</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+  </head>
+  <body class="neon-bg">
+    <div class="center-card">
+      <h1 class="logo">TheBuzz.Feed</h1>
+      {% if error %}
+      <div class="err">{{ error }}</div>
+      {% endif %}
+      <form method="post" action="/login" class="form">
+        <input name="username" placeholder="username" required>
+        <input name="password" placeholder="password" type="password" required>
+        <button type="submit" class="btn">Sign in</button>
+      </form>
+      <div class="hint">Test account: <strong>admin / password123</strong></div>
+    </div>
+  </body>
+</html>
